@@ -95,7 +95,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  getInitialState: function getInitialState() {
 	    return {
 	      breakpoint: null,
-	      isReady: false
+	      isReady: !this.props.responsive
 	    };
 	  },
 	  componentDidMount: function componentDidMount() {
