@@ -12,7 +12,7 @@ var Slider = React.createClass({
   getInitialState: function () {
     return {
       breakpoint: null,
-      isReady: false,
+      isReady: !this.props.responsive,
     };
   },
   componentDidMount: function () {
