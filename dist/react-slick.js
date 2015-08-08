@@ -323,6 +323,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  componentWillUnmount: function componentWillUnmount() {
 	    window.removeEventListener('resize', this.onWindowResized);
 	  },
+	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+	    if (!this.props.lazyLoad && this.state.slideCount !== _react2['default'].Children.count(nextProps.children)) {
+	      this.initialize(nextProps);
+	    }
+	  },
 	  componentDidUpdate: function componentDidUpdate() {
 	    this.adaptHeight();
 	  },

@@ -48,6 +48,12 @@ export var InnerSlider = React.createClass({
   componentWillUnmount: function () {
     window.removeEventListener('resize', this.onWindowResized);
   },
+  componentWillReceiveProps: function(nextProps) {
+    if (!this.props.lazyLoad &&
+        this.state.slideCount !== React.Children.count(nextProps.children)) {
+      this.initialize(nextProps);
+    }
+  },
   componentDidUpdate: function () {
     this.adaptHeight();
   },
