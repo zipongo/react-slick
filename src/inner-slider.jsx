@@ -49,6 +49,9 @@ export var InnerSlider = React.createClass({
     window.removeEventListener('resize', this.onWindowResized);
   },
   componentDidUpdate: function () {
+    if (this.state.slideCount !== React.Children.count(this.props.children)) {
+      this.initialize(this.props);
+    }
     this.adaptHeight();
   },
   onWindowResized: function () {
