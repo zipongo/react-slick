@@ -324,7 +324,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    window.removeEventListener('resize', this.onWindowResized);
 	  },
 	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-	    if (this.state.slideCount !== _react2['default'].Children.count(nextProps.children)) {
+	    if (!this.props.lazyLoad && this.state.slideCount !== _react2['default'].Children.count(nextProps.children)) {
 	      this.initialize(nextProps);
 	    }
 	  },
