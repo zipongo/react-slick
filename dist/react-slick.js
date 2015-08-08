@@ -324,6 +324,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    window.removeEventListener('resize', this.onWindowResized);
 	  },
 	  componentDidUpdate: function componentDidUpdate() {
+	    if (this.state.slideCount !== _react2['default'].Children.count(this.props.children)) {
+	      this.initialize(this.props);
+	    }
 	    this.adaptHeight();
 	  },
 	  onWindowResized: function onWindowResized() {
